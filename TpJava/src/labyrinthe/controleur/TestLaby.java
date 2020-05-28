@@ -31,7 +31,7 @@ public class TestLaby {
     public TestLaby(File fic) throws FileFormatException, FileNotFoundException {
 
         laby = new Labyrinthe(fic);
-        
+
         labyConsole = new LabyConsole();
 
     }
@@ -56,17 +56,20 @@ public class TestLaby {
         //BUG Potentiel
         if (ligne == laby.getArriveeX() && colonne == laby.getArriveeY()) {
             return true;
-        }
-        else if (ligne >= 0 && ligne < laby.getTailleX() && colonne >= 0 && colonne < laby.getTailleY() && !laby.getCase(ligne, colonne).getVisited()) {
+        } else if (ligne >= 0 && ligne < laby.getTailleX() && colonne >= 0 && colonne < laby.getTailleY() && !laby.getCase(ligne, colonne).getVisited()) {
             laby.getCase(ligne, colonne).setVisited();
 
             labyConsole.affiche(laby.getCase(ligne, colonne));
             labyConsole.affiche(laby);
-            for (int i = 0; i < laby.getCase(ligne, colonne).getNbVoisins(); i++) {
+            deplacerDFS(ligne + 1, colonne);
+            deplacerDFS(ligne - 1, colonne);
+            deplacerDFS(ligne, colonne + 1);
+            deplacerDFS(ligne, colonne - 1);
+            /*for (int i = 0; i < laby.getCase(ligne, colonne).getNbVoisins(); i++) {
                 int x = laby.getCase(ligne, colonne).getVoisin(i).getPositionX();
                 int y = laby.getCase(ligne, colonne).getVoisin(i).getPositionY();
                 deplacerDFS(x, y);
-            }
+            }*/
         }
         return false;
     }
@@ -108,41 +111,42 @@ public class TestLaby {
      * déplace en profondeur avec deplacerDFS (à partir de la position de départ
      * définie dans la classe Labyrinthe), soit aléatoirement avec deplacerAuto,
      * soit il quitte le programme.
+     *
      * @param args
      * @throws labyrinthe.controleur.FileFormatException
      * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) throws FileFormatException, FileNotFoundException{
-        
+    public static void main(String[] args) throws FileFormatException, FileNotFoundException {
+
         LabyConsole LC = new LabyConsole();
-        
+
         File f = new File("labyrinthe.txt");
-        
+
         TestLaby TL = new TestLaby(f);
-        
+
         LC.affiche(laby);
-        
-        switch(LC.menu()){
+
+        switch (LC.menu()) {
             case 1:
                 //Alea
-                if(deplacerAuto()){
+                if (deplacerAuto()) {
                     System.out.println("Réussi");
-                }else{
+                } else {
                     System.out.println("Pas Réussi");
                 }
                 break;
             case 2:
                 //DFS
-                if(deplacerDFS(laby.getDepartX(), laby.getDepartY())){
+                if (deplacerDFS(laby.getDepartX(), laby.getDepartY())) {
                     System.out.println("Réussi");
-                }else{
+                } else {
                     System.out.println("Pas Réussi");
                 }
                 break;
             case 3:
                 System.exit(0);
                 break;
-        }  
+        }
     }
 
 }
