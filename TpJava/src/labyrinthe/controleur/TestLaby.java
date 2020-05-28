@@ -32,7 +32,13 @@ public class TestLaby {
      * @param colonne de la case
      * @return d'un booléen d'arrêt du déplacement
      */
-    public boolean deplacerDFS(int ligne, int colonne) { … }
+    public boolean deplacerDFS(int ligne, int colonne) {
+        if (ligne>0 && ligne<Labyrinthe.getTailleX() ) {
+            
+        } else {
+            return false;
+        }
+    }
 
  /**
      * Déplacement aléatoire dans le labyrinthe : cette méthode utilise la méthodes autoMove de Labyrinthe qui peut
