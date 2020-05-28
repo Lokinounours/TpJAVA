@@ -114,7 +114,11 @@ public class Labyrinthe {
      * @throws ImpossibleMoveException : déplacement impossible
      */
     public void autoMove() throws ImpossibleMoveException {
-
+        int nombreAleatoire = 1 + (int)(Math.random() * ((4 - 1) + 1));
+        if (nombreAleatoire == 1){
+            
+        }
+        }
     }
 
     /**
