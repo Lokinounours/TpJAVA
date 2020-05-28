@@ -57,7 +57,7 @@ public class Labyrinthe {
 
                 this.departX = Integer.parseInt(result[2]);
                 this.departY = Integer.parseInt(result[3]);
-                
+
                 this.posX = this.departX;
                 this.posY = this.departY;
 
@@ -87,7 +87,7 @@ public class Labyrinthe {
     public int getTailleY() {
         return this.tailleY;
     }
-    
+
     public void setPosX(int x) {
         this.posX = x;
     }
@@ -95,7 +95,7 @@ public class Labyrinthe {
     public void setPosY(int y) {
         this.posY = y;
     }
-    
+
     public int getArriveeX() {
         return this.arriveeX;
     }
@@ -103,7 +103,7 @@ public class Labyrinthe {
     public int getArriveeY() {
         return this.arriveeY;
     }
-    
+
     public int getPosX() {
         return this.posX;
     }
@@ -145,16 +145,16 @@ public class Labyrinthe {
         int newX = this.posX, newY = this.posY;
         switch (nombreAleatoire) {
             case 1:
-                this.move(newX+1, newY);
+                this.move(newX + 1, newY);
                 break;
             case 2:
-                this.move(newX-1, newY);
+                this.move(newX - 1, newY);
                 break;
             case 3:
-                this.move(newX, newY+1);
+                this.move(newX, newY + 1);
                 break;
             default:
-                this.move(newX, newY-1);
+                this.move(newX, newY - 1);
                 break;
         }
     }
