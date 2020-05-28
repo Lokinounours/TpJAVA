@@ -8,6 +8,8 @@ package labyrinthe.modele;
 import java.io.File;
 import java.util.ArrayList;
 
+import labyrinthe.controleur.*;
+
 /**
  *
  * @author pierr
@@ -31,9 +33,9 @@ public class Labyrinthe {
      * l’exception FileFormatException.
      *
      * @param fic
-     * @throws FileFormatException : problème de format de fichier
      */
-    public Labyrinthe(File fic) throws FileFormatException {…
+    public Labyrinthe(File fic) throws FileFormatException {
+
     }
 
     /**
@@ -48,7 +50,13 @@ public class Labyrinthe {
      * @param colonne
      * @throws ImpossibleMoveException : déplacement impossible
      */
-    public void move(int ligne, int colonne) throws ImpossibleMoveException {…
+    public void move(int ligne, int colonne) throws ImpossibleMoveException {
+        if (getCase(ligne, colonne).canMoveToCase()) {
+            getCase(ligne, colonne).setVisited();
+        } else {
+            throwsImpossibleMoveException;
+        }
+
     }
 
     /**
@@ -59,7 +67,8 @@ public class Labyrinthe {
      *
      * @throws ImpossibleMoveException : déplacement impossible
      */
-    public void autoMove() throws ImpossibleMoveException {…
+    public void autoMove() throws ImpossibleMoveException {
+
     }
 
     /**
@@ -70,7 +79,12 @@ public class Labyrinthe {
      * @param col
      * @return
      */
-    public Case getCase(int lig, int col) {…
+    public Case getCase(int lig, int col) {
+        for (int i = 0; i < grille.size(); i++) {
+            if (grille.get(i).getPositionX() == lig && grille.get(i).getPositionY() == col) {
+                return grille.get(i);
+            }
+        }
+        return null;
     }
-
 }
