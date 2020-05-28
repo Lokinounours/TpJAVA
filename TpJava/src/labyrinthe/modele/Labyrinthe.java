@@ -111,8 +111,20 @@ public class Labyrinthe {
      */
     public void autoMove() throws ImpossibleMoveException {
         int nombreAleatoire = 1 + (int) (Math.random() * ((4 - 1) + 1));
-        if (nombreAleatoire == 1) {
-
+        int newX = this.posX, newY = this.posY;
+        switch (nombreAleatoire) {
+            case 1:
+                this.move(newX+1, newY);
+                break;
+            case 2:
+                this.move(newX-1, newY);
+                break;
+            case 3:
+                this.move(newX, newY+1);
+                break;
+            default:
+                this.move(newX, newY-1);
+                break;
         }
     }
 
