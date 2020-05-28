@@ -87,6 +87,14 @@ public class Labyrinthe {
     public int getTailleY() {
         return this.tailleY;
     }
+    
+    public int getDepartX() {
+        return this.departX;
+    }
+
+    public int getDepartY() {
+        return this.departY;
+    }
 
     public void setPosX(int x) {
         this.posX = x;
