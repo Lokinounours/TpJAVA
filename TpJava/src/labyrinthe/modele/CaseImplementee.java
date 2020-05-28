@@ -52,7 +52,7 @@ public class CaseImplementee implements Case {
     @Override
     // If true go to false, if false go to true
     public void setVisited() {
-        this.visited = !this.visited;
+        this.visited = true;
     }
 
     @Override

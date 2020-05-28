@@ -37,6 +37,14 @@ public class Labyrinthe {
     public Labyrinthe(File fic) throws FileFormatException {
 
     }
+    
+    public int getTailleX() {
+        return this.tailleX;
+    }
+    
+    public int getTailleY() {
+        return this.tailleY;
+    }
 
     /**
      * Tente de se déplacer dans la case ligne et colonne en paramètres du

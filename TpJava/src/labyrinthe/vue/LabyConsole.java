@@ -68,8 +68,8 @@ public class LabyConsole {
      * @param laby
      */
     public void affiche(Labyrinthe laby) { 
-        for(int i=0; i<laby.getTailleX; i++){
-            for(int j=0; j<laby.getTailleY; j++){
+        for(int i=0; i<laby.getTailleX(); i++){
+            for(int j=0; j<laby.getTailleY(); j++){
                 if(laby.getCase(i, j).canMoveToCase()){
                     System.out.print("_");
                 }else{
