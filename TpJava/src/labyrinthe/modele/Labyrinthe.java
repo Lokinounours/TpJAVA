@@ -123,7 +123,7 @@ public class Labyrinthe {
      * @throws labyrinthe.controleur.ImpossibleMoveException
      */
     public void move(int ligne, int colonne) throws ImpossibleMoveException {
-        if (getCase(ligne, colonne).canMoveToCase() && ligne > 0 && ligne < this.getTailleX() && colonne > 0 && colonne < this.getTailleY() && !this.getCase(ligne, colonne).getVisited()) {
+        if (getCase(ligne, colonne).canMoveToCase() && ligne >= 0 && ligne < this.getTailleX() && colonne >= 0 && colonne < this.getTailleY() && !this.getCase(ligne, colonne).getVisited()) {
             getCase(ligne, colonne).setVisited();
             this.setPosX(ligne);
             this.setPosY(colonne);

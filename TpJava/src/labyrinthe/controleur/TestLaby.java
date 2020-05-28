@@ -62,7 +62,7 @@ public class TestLaby {
         if (ligne == laby.getArriveeX() && colonne == laby.getArriveeY()) {
             return true;
         }
-        if (ligne > 0 && ligne < laby.getTailleX() && colonne > 0 && colonne < laby.getTailleY() && !laby.getCase(ligne, colonne).getVisited()) {
+        else if (ligne >= 0 && ligne < laby.getTailleX() && colonne >= 0 && colonne < laby.getTailleY() && !laby.getCase(ligne, colonne).getVisited()) {
             laby.getCase(ligne, colonne).setVisited();
             labyConsole.affiche(laby.getCase(ligne, colonne));
             labyConsole.affiche(laby);
@@ -90,9 +90,11 @@ public class TestLaby {
         try {
             while (laby.getArriveeX() != laby.getPosX() && laby.getArriveeY() != laby.getPosY()) {
                 laby.autoMove();
+                labyConsole.affiche(laby.getCase(laby.getPosX(), laby.getPosY()));
+                labyConsole.affiche(laby);
             }
             return true;
-        } catch (Exception e) {
+        } catch (ImpossibleMoveException e) {
             System.out.println(e);
             return false;
         }
