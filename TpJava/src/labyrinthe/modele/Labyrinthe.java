@@ -38,47 +38,47 @@ public class Labyrinthe {
      * @throws java.io.FileNotFoundException
      */
     public Labyrinthe(File fic) throws FileNotFoundException {
-        
+
         Scanner scanner = new Scanner(fic);
-        
+
         int i = 0;
-        
-        while(scanner.hasNextLine()){ 
-            if(i==0){
-                
+
+        while (scanner.hasNextLine()) {
+            if (i == 0) {
+
                 String line = scanner.nextLine();
-                
+
                 String[] result = line.split(" ");
-                
+
                 this.tailleX = Integer.parseInt(result[0]);
                 this.tailleY = Integer.parseInt(result[1]);
-                
+
                 this.departX = Integer.parseInt(result[2]);
                 this.departY = Integer.parseInt(result[3]);
-                
+
                 this.arriveeX = Integer.parseInt(result[4]);
                 this.arriveeY = Integer.parseInt(result[5]);
-                
-            }else{
-                
+
+            } else {
+
                 String line = scanner.nextLine();
-                
-                for(int j=0; j<this.tailleX; j++){
-                    if(line.charAt(j)=='X'){
-                        grille.add(new CaseMur(i-1,j));
-                    }else{
-                        grille.add(new CaseTrou(i-1,j));
+
+                for (int j = 0; j < this.tailleX; j++) {
+                    if (line.charAt(j) == 'X') {
+                        grille.add(new CaseMur(i - 1, j));
+                    } else {
+                        grille.add(new CaseTrou(i - 1, j));
                     }
-                }  
+                }
             }
             i++;
         }
     }
-    
+
     public int getTailleX() {
         return this.tailleX;
     }
-    
+
     public int getTailleY() {
         return this.tailleY;
     }
@@ -114,10 +114,9 @@ public class Labyrinthe {
      * @throws ImpossibleMoveException : déplacement impossible
      */
     public void autoMove() throws ImpossibleMoveException {
-        int nombreAleatoire = 1 + (int)(Math.random() * ((4 - 1) + 1));
-        if (nombreAleatoire == 1){
-            
-        }
+        int nombreAleatoire = 1 + (int) (Math.random() * ((4 - 1) + 1));
+        if (nombreAleatoire == 1) {
+
         }
     }
 
