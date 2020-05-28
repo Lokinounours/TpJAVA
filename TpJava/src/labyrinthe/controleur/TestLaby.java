@@ -5,19 +5,38 @@
  */
 package labyrinthe.controleur;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import labyrinthe.modele.Labyrinthe;
+
 /**
  *
  * @author jules
  */
 public class TestLaby {
+    
+    private Labyrinthe laby;
     /**
      * Constructeur qui instancie l’objet en attribut de la classe Labyrinthe avec le fichier fic de type File en paramètre.
      *  Cette méthode propage l’exception FileFormatException en cas de problème de format du fichier.
      *
      * @param fic : fichier du labyrinthe
-     * @throws FileFormatException : problème de format de ficher
+     * @throws labyrinthe.controleur.FileFormatException
+     * @throws labyrinthe.controleur.FileFormatException
+     * @throws labyrinthe.controleur.FileFormatException
      */
-    public TestLaby(File fic) throws FileFormatException { … }
+    
+    public TestLaby(File fic) throws FileFormatException  { 
+    
+        Scanner scanner = new Scanner(fic);
+        
+        while(scanner.hasNextLine()){
+            int a = scanner.nextInt();
+            System.out.println(a);
+        }
+    
+    }
 
  /**
      * Déplacement récursif en profondeur dans le labyrinthe à partir des positions ligne et colonne en paramètres.
