@@ -17,7 +17,7 @@ import labyrinthe.vue.*;
  */
 public class TestLaby {
 
-    private static Labyrinthe laby;
+    private  Labyrinthe laby;
     private LabyConsole labyConsole;
 
     /**
@@ -111,7 +111,7 @@ public class TestLaby {
      * @throws labyrinthe.controleur.FileFormatException
      * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) throws FileFormatException, FileNotFoundException{
+    public  void main(String[] args) throws FileFormatException, FileNotFoundException{
         
         LabyConsole LC = new LabyConsole();
         
@@ -124,9 +124,19 @@ public class TestLaby {
         switch(LC.menu()){
             case 1:
                 //Alea
+                if(deplacerAuto()){
+                    System.out.println("Réussi");
+                }else{
+                    System.out.println("Pas Réussi");
+                }
                 break;
             case 2:
                 //DFS
+                if(deplacerDFS(laby.getDepartX(), laby.getDepartY())){
+                    System.out.println("Réussi");
+                }else{
+                    System.out.println("Pas Réussi");
+                }
                 break;
             case 3:
                 System.exit(0);
