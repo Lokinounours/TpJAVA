@@ -94,15 +94,11 @@ public class Labyrinthe {
      * @param ligne
      * @param colonne
      * @throws labyrinthe.controleur.ImpossibleMoveException
-     * @throws ImpossibleMoveException : déplacement impossible
      */
     public void move(int ligne, int colonne) throws ImpossibleMoveException {
         if (getCase(ligne, colonne).canMoveToCase()) {
             getCase(ligne, colonne).setVisited();
-        } else {
-            throwsImpossibleMoveException;
-        }
-
+        } 
     }
 
     /**
