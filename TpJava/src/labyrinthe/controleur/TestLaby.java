@@ -30,7 +30,7 @@ public class TestLaby {
      * @throws labyrinthe.controleur.FileFormatException
      * @throws labyrinthe.controleur.FileFormatException
      */
-    public TestLaby(File fic) throws FileFormatException {
+    public TestLaby(File fic) throws FileFormatException, FileNotFoundException {
 
         Scanner scanner = new Scanner(fic);
 
@@ -84,7 +84,12 @@ public class TestLaby {
      *
      * @return d'un booléen d'arrêt du déplacement
      */
-    public boolean deplacerAuto() {…
+    public boolean deplacerAuto() {
+        try {
+            
+        } catch (err) {
+            System.out.println(err);
+        }
     }
 
     /**
