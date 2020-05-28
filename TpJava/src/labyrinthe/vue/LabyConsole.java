@@ -29,11 +29,13 @@ public class LabyConsole {
      */
     public int menu() {
         
-        int choix = -1;
+        boolean ok = false;
         
         Scanner keyboard = new Scanner(System.in);
         
-        while(choix!=1 || choix!=2 || choix!=3){
+        int choix = -1;
+        
+        while(!ok){
             
             System.out.println("Veuillez entrer le nombre correspondant à votre choix.\n");
 
@@ -42,6 +44,10 @@ public class LabyConsole {
             System.out.println("3.Quitter.");
             
             choix = keyboard.nextInt();
+            
+            if(choix == 1 || choix == 2 || choix ==3 ){
+                ok=true;
+            }
         }
         return choix;
     }
