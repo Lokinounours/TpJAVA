@@ -59,7 +59,9 @@ public class TestLaby {
      */
     public boolean deplacerDFS(int ligne, int colonne) {
         //BUG Potentiel
-        if (ligne==laby.getArriveeX() && colonne==laby.getArriveeY())return true;
+        if (ligne == laby.getArriveeX() && colonne == laby.getArriveeY()) {
+            return true;
+        }
         if (ligne > 0 && ligne < laby.getTailleX() && colonne > 0 && colonne < laby.getTailleY() && !laby.getCase(ligne, colonne).getVisited()) {
             laby.getCase(ligne, colonne).setVisited();
             labyConsole.affiche(laby.getCase(ligne, colonne));
@@ -86,7 +88,10 @@ public class TestLaby {
      */
     public boolean deplacerAuto() {
         try {
-            laby.autoMove();
+            while (laby.getArriveeX() != laby.getPosX() && laby.getArriveeY() != laby.getPosY()) {
+                laby.autoMove();
+            }
+            return true;
         } catch (Exception e) {
             System.out.println(e);
             return false;

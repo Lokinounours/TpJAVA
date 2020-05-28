@@ -101,6 +101,14 @@ public class Labyrinthe {
     public int getArriveeY() {
         return this.arriveeY;
     }
+    
+    public int getPosX() {
+        return this.posX;
+    }
+
+    public int getPosY() {
+        return this.posY;
+    }
 
     /**
      * Tente de se déplacer dans la case ligne et colonne en paramètres du
@@ -117,7 +125,8 @@ public class Labyrinthe {
     public void move(int ligne, int colonne) throws ImpossibleMoveException {
         if (getCase(ligne, colonne).canMoveToCase() && ligne > 0 && ligne < this.getTailleX() && colonne > 0 && colonne < this.getTailleY() && !this.getCase(ligne, colonne).getVisited()) {
             getCase(ligne, colonne).setVisited();
-            this.set
+            this.setPosX(ligne);
+            this.setPosY(colonne);
         }
     }
 
