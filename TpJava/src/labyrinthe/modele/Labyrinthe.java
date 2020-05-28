@@ -82,6 +82,14 @@ public class Labyrinthe {
     public int getTailleY() {
         return this.tailleY;
     }
+    
+    public int getArriveeX() {
+        return this.arriveeX;
+    }
+
+    public int getArriveeY() {
+        return this.arriveeY;
+    }
 
     /**
      * Tente de se déplacer dans la case ligne et colonne en paramètres du
