@@ -9,6 +9,8 @@ package labyrinthe.controleur;
  *
  * @author jules
  */
-public class ImpossibleMoveException {
-    
+public class ImpossibleMoveException extends Exception {
+    public ImpossibleMoveException(){
+        System.out.println("Mouvement impossible.");
+    }
 }
