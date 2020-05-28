@@ -7,7 +7,6 @@ package labyrinthe.controleur;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 import labyrinthe.modele.*;
 import labyrinthe.vue.*;
 
@@ -28,12 +27,12 @@ public class TestLaby {
      * @param fic : fichier du labyrinthe
      * @throws labyrinthe.controleur.FileFormatException
      * @throws java.io.FileNotFoundException
-     * @throws labyrinthe.controleur.FileFormatException
-     * @throws labyrinthe.controleur.FileFormatException
      */
     public TestLaby(File fic) throws FileFormatException, FileNotFoundException {
 
         laby = new Labyrinthe(fic);
+        
+        labyConsole = new LabyConsole();
 
     }
 
@@ -87,7 +86,8 @@ public class TestLaby {
         try {
             while (laby.getArriveeX() != laby.getPosX() && laby.getArriveeY() != laby.getPosY()) {
                 laby.autoMove();
-                labyConsole.affiche(laby.getCase(laby.getPosX(), laby.getPosY()));
+                Case c = laby.getCase(laby.getPosX(), laby.getPosY());
+                labyConsole.affiche(c);
                 labyConsole.affiche(laby);
             }
             return true;
