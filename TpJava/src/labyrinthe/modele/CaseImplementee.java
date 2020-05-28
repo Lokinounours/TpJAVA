@@ -25,7 +25,8 @@ public class CaseImplementee implements Case {
      * est nul.
      */
     public CaseImplementee(int lig, int col) {
-
+        this.positionX = lig;
+        this.positionY = col;
     }
 
     @Override
