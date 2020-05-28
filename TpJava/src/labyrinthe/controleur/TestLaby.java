@@ -17,8 +17,8 @@ import labyrinthe.vue.*;
  */
 public class TestLaby {
 
-    private  Labyrinthe laby;
-    private LabyConsole labyConsole;
+    private static Labyrinthe laby;
+    private static LabyConsole labyConsole;
 
     /**
      * Constructeur qui instancie l’objet en attribut de la classe Labyrinthe
@@ -53,7 +53,7 @@ public class TestLaby {
      * @param colonne de la case
      * @return d'un booléen d'arrêt du déplacement
      */
-    public boolean deplacerDFS(int ligne, int colonne) {
+    public static boolean deplacerDFS(int ligne, int colonne) {
         //BUG Potentiel
         if (ligne == laby.getArriveeX() && colonne == laby.getArriveeY()) {
             return true;
@@ -82,7 +82,7 @@ public class TestLaby {
      *
      * @return d'un booléen d'arrêt du déplacement
      */
-    public boolean deplacerAuto() {
+    public static boolean deplacerAuto() {
         try {
             while (laby.getArriveeX() != laby.getPosX() && laby.getArriveeY() != laby.getPosY()) {
                 laby.autoMove();
@@ -111,7 +111,7 @@ public class TestLaby {
      * @throws labyrinthe.controleur.FileFormatException
      * @throws java.io.FileNotFoundException
      */
-    public  void main(String[] args) throws FileFormatException, FileNotFoundException{
+    public static void main(String[] args) throws FileFormatException, FileNotFoundException{
         
         LabyConsole LC = new LabyConsole();
         
