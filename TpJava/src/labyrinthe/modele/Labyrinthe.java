@@ -38,6 +38,8 @@ public class Labyrinthe {
      * @throws java.io.FileNotFoundException
      */
     public Labyrinthe(File fic) throws FileNotFoundException {
+        
+        grille = new ArrayList<>();
 
         Scanner scanner = new Scanner(fic);
 

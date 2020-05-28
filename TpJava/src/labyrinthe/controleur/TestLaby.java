@@ -17,7 +17,7 @@ import labyrinthe.vue.*;
  */
 public class TestLaby {
 
-    private Labyrinthe laby;
+    private static Labyrinthe laby;
     private LabyConsole labyConsole;
 
     /**
@@ -119,8 +119,19 @@ public class TestLaby {
         
         TestLaby TL = new TestLaby(f);
         
+        LC.affiche(laby);
         
-        
+        switch(LC.menu()){
+            case 1:
+                //Alea
+                break;
+            case 2:
+                //DFS
+                break;
+            case 3:
+                System.exit(0);
+                break;
+        }  
     }
 
 }
