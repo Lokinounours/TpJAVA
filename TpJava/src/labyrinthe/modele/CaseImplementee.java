@@ -69,5 +69,38 @@ public class CaseImplementee implements Case {
     public int getNbVoisins() {
         return this.voisins.size();
     }
+    
+    public void setVoisions() {
+        voisins.clear();
+        int i = 0;
+        int j = 0;
+        for (int a = 0; a < 4; a++) {
+            switch (a) {
+                case 0:
+                    i = -1;
+                    j = 0;
+                    break;
+                case 1:
+                    i = 0;
+                    j = -1;
+                    break;
+                case 2:
+                    i = 1;
+                    j = 0;
+                    break;
+                case 3:
+                    i = 0;
+                    j = +1;
+                    break;
+                default:
+                    i = 0;
+                    j = 0;
+                    break;
+            }
+            if (this.getPositionX() + i >= 0 && this.getPositionY() + j >= 0) {
+                voisins.add(new CaseImplementee(this.getPositionX() + i, this.getPositionY() + j));
+            }
+        }
+    }
 
 }
