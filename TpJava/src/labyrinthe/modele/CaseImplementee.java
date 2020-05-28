@@ -28,6 +28,11 @@ public class CaseImplementee implements Case {
         this.positionX = lig;
         this.positionY = col;
     }
+    
+    public CaseImplementee(CaseImplementee myCase) {
+        this.positionX = myCase.positionX;
+        this.positionY = myCase.positionY;
+    }
 
     @Override
     public int getPositionX() {
