@@ -30,37 +30,38 @@ public class CaseImplementee implements Case {
 
     @Override
     public int getPositionX() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.positionX;
     }
 
     @Override
     public int getPositionY() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.positionY;
     }
 
     @Override
     public boolean canMoveToCase() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.moved;
     }
 
     @Override
     public boolean getVisited() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.visited;
     }
 
     @Override
+    // If true go to false, if false go to true
     public void setVisited() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.visited = !this.visited;
     }
 
     @Override
     public Case getVoisin(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.voisins.get(i);
     }
 
     @Override
     public int getNbVoisins() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.voisins.size();
     }
 
 }
