@@ -11,6 +11,6 @@ package labyrinthe.controleur;
  */
 public class FileFormatException extends Exception{
     public FileFormatException(){
-        System.err.println("Format non reconnu.");
+        System.out.println("Format non reconnu.");
     }
 }
