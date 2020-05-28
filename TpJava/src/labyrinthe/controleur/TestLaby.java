@@ -17,7 +17,7 @@ import labyrinthe.vue.*;
  */
 public class TestLaby {
 
-    private Labyrinthe laby;
+    private static Labyrinthe laby;
     private LabyConsole labyConsole;
 
     /**
@@ -33,12 +33,7 @@ public class TestLaby {
      */
     public TestLaby(File fic) throws FileFormatException, FileNotFoundException {
 
-        Scanner scanner = new Scanner(fic);
-
-        while (scanner.hasNextLine()) {
-            int a = scanner.nextInt();
-            System.out.println(a);
-        }
+        laby = new Labyrinthe(fic);
 
     }
 
@@ -112,15 +107,31 @@ public class TestLaby {
      * déplace en profondeur avec deplacerDFS (à partir de la position de départ
      * définie dans la classe Labyrinthe), soit aléatoirement avec deplacerAuto,
      * soit il quitte le programme.
+     * @param args
+     * @throws labyrinthe.controleur.FileFormatException
+     * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileFormatException, FileNotFoundException{
         
         LabyConsole LC = new LabyConsole();
         
-        int choix = LC.menu();
+        File f = new File("labyrinthe.txt");
         
+        TestLaby TL = new TestLaby(f);
         
+        LC.affiche(laby);
         
+        switch(LC.menu()){
+            case 1:
+                //Alea
+                break;
+            case 2:
+                //DFS
+                break;
+            case 3:
+                System.exit(0);
+                break;
+        }  
     }
 
 }
