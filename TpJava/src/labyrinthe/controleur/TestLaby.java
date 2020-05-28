@@ -27,6 +27,7 @@ public class TestLaby {
      *
      * @param fic : fichier du labyrinthe
      * @throws labyrinthe.controleur.FileFormatException
+     * @throws java.io.FileNotFoundException
      * @throws labyrinthe.controleur.FileFormatException
      * @throws labyrinthe.controleur.FileFormatException
      */
@@ -105,7 +106,14 @@ public class TestLaby {
      * définie dans la classe Labyrinthe), soit aléatoirement avec deplacerAuto,
      * soit il quitte le programme.
      */
-    public static void main(String[] args) {…
+    public static void main(String[] args){
+        
+        LabyConsole LC = new LabyConsole();
+        
+        int choix = LC.menu();
+        
+        
+        
     }
 
 }
