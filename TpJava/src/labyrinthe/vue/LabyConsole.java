@@ -5,7 +5,9 @@
  */
 package labyrinthe.vue;
 
-import labyrinthe.model.*;
+import java.util.Scanner;
+import labyrinthe.modele.*;
+import labyrinthe.controleur.*;
 
 /**
  *
@@ -25,14 +27,37 @@ public class LabyConsole {
      *
      * @return choix
      */
-    public int menu() { }
+    public int menu() {
+        
+        int choix = -1;
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        while(choix!=1 || choix!=2 || choix!=3){
+            
+            System.out.println("Veuillez entrer le nombre correspondant à votre choix.\n");
+
+            System.out.println("1.Déplacement aléatoire.");
+            System.out.println("2.Déplacement en profondeur DFS.");
+            System.out.println("3.Quitter.");
+            
+            choix = keyboard.nextInt();
+        }
+        return choix;
+    }
 
     /**
      * Affiche les coordonnées positionX et positionY protected de la Case c en paramètre
      *
      * @param c 
      */
-    public void affiche(Case c) { }
+    public void affiche(Case c) { 
+        
+        System.out.println("Position en X : "+c.getPositionX());
+        
+        System.out.println("Position en Y : "+c.getPositionY());
+        
+    }
 
     /**
      * Affiche un labyrinthe en mode console en se servant des méthodes du Labyrinthe laby en paramètre :
@@ -42,5 +67,19 @@ public class LabyConsole {
      *
      * @param laby
      */
-    public void affiche(Labyrinthe laby) { }
+    public void affiche(Labyrinthe laby) { 
+        for(int i=0; i<laby.getTailleX; i++){
+            for(int j=0; j<laby.getTailleY; j++){
+                if(laby.getCase(i, j).canMoveToCase()){
+                    System.out.print("_");
+                }else{
+                    System.out.print("X");
+                }
+                if(laby.getCase(i, j).getVisited()){
+                    System.out.print("V");
+                }
+            }
+            System.out.print("\n");
+        } 
+    }
 }
