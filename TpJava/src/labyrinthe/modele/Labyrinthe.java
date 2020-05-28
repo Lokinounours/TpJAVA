@@ -55,6 +55,9 @@ public class Labyrinthe {
 
                 this.departX = Integer.parseInt(result[2]);
                 this.departY = Integer.parseInt(result[3]);
+                
+                this.posX = this.departX;
+                this.posY = this.departY;
 
                 this.arriveeX = Integer.parseInt(result[4]);
                 this.arriveeY = Integer.parseInt(result[5]);
