@@ -60,6 +60,12 @@ public class TestLaby {
         }
         else if (ligne >= 0 && ligne < laby.getTailleX() && colonne >= 0 && colonne < laby.getTailleY() && !laby.getCase(ligne, colonne).getVisited()) {
             laby.getCase(ligne, colonne).setVisited();
+            
+            System.out.println("Debug");
+            System.out.println(ligne);
+            System.out.println(colonne);
+            System.out.println(laby.getCase(ligne, colonne).getNbVoisins());
+            
             labyConsole.affiche(laby.getCase(ligne, colonne));
             labyConsole.affiche(laby);
             for (int i = 0; i < laby.getCase(ligne, colonne).getNbVoisins(); i++) {

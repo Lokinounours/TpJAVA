@@ -24,4 +24,6 @@ public interface Case {
     public Case getVoisin(int i); // retourne le voisin numero i de la case : voir attribut voisins ci-dessous 
 
     public int getNbVoisins(); // retourne le nombre de voisins de la case : voir attribut nb_voisins ci-dessous
+
+    public void setVoisins();
 }

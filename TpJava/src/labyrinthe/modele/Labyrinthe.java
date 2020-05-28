@@ -78,6 +78,8 @@ public class Labyrinthe {
             }
             i++;
         }
+        
+        getCase(posX, posY).setVoisins();
     }
 
     public int getTailleX() {

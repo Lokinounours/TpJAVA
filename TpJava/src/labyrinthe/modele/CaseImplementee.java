@@ -27,11 +27,17 @@ public class CaseImplementee implements Case {
     public CaseImplementee(int lig, int col) {
         this.positionX = lig;
         this.positionY = col;
+        
+        nb_voisins = 0;
+        voisins = new ArrayList();
     }
     
     public CaseImplementee(CaseImplementee myCase) {
         this.positionX = myCase.positionX;
         this.positionY = myCase.positionY;
+        
+        nb_voisins = 0;
+        voisins = new ArrayList();
     }
 
     @Override
@@ -70,7 +76,7 @@ public class CaseImplementee implements Case {
         return this.voisins.size();
     }
     
-    public void setVoisions() {
+    public void setVoisins() {
         voisins.clear();
         int i = 0;
         int j = 0;
